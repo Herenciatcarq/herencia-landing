@@ -13,6 +13,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 /* Encabezado */
@@ -37,24 +38,35 @@ header nav a:hover {
     text-decoration: underline;
 }
 
+.logo {
+    max-height: 30px;
+    width: auto;
+    vertical-align: middle;
+    margin-right: 0.5rem;
+}
+
 /* Hero section */
 .hero {
-    background: url('Pink Photo Collage Beauty Influencer Blog Facebook Cover.jpg') no-repeat center 60%/cover;
+    background: url('Pink Photo Collage Beauty Influencer Blog Facebook Cover.jpg') no-repeat center center/cover;
     font-family: "Berlin Sans FB Demi", serif;
     color: black;
     text-align: center;
     text-shadow: 2px 2px 5px rgba(255, 255, 255, 0.8);
-    padding: 12rem 1rem;
+    padding: 8rem 1rem;
+    position: relative;
+    z-index: 1;
 }
 
 .hero h2 {
     font-size: 2.5rem;
     margin-bottom: 0.5rem;
+    z-index: 2;
 }
 
 .hero p {
     font-size: 1.2rem;
     margin-bottom: 1rem;
+    z-index: 2;
 }
 
 .cta-button {
@@ -66,7 +78,9 @@ header nav a:hover {
     text-decoration: none;
     font-size: 1rem;
     cursor: pointer;
+    z-index: 2;
 }
+
 .cta-button:hover {
     background: #cf7c00;
 }
@@ -114,13 +128,16 @@ header nav a:hover {
 .contacto {
     background: #f7f7f7;
 }
+
 .contact-button {
     background: #222;
     color: #fff;
     padding: 0.75rem 1.5rem;
     border-radius: 0.5rem;
     text-decoration: none;
+    display: inline-block;
 }
+
 .contact-button:hover {
     background: #444;
 }
@@ -132,88 +149,56 @@ footer {
     padding: 1rem 0;
     text-align: center;
     font-size: 0.9rem;
+}
 
+/* Hero description */
 .hero-description {
-    color: black;      
-    margin-bottom: 2rem;  
+    color: black;
+    margin-bottom: 2rem;
     font-weight: 500;
-
-.logo {
-  max-height: 40px;
-  width: auto;   
-  vertical-align: middle;
-  margin-right: 0.5rem;
 }
 
+/* Responsive Design */
 @media (max-width: 768px) {
-  header nav {
-    flex-direction: column;
-    align-items: flex-start;
-  }
+    header nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
 
-  .hero h2 {
-    font-size: 1.8rem;
-    text-align: center;
-  }
+    header .container {
+        flex-direction: column;
+        align-items: center;
+    }
 
-  .hero p {
-    font-size: 1rem;
-    text-align: center;
-  }
+    .hero h2 {
+        font-size: 1.8rem;
+    }
 
-  .services {
-    flex-direction: column;
-    gap: 1.5rem;
-  }
+    .hero p {
+        font-size: 1rem;
+    }
 
-  .services .service {
-    width: 90%;
-    margin: 0 auto;
-  }
+    .hero {
+        padding: 4rem 1rem;
+    }
 
-  header .container {
-    flex-direction: column;
-    align-items: center;
-  }
+    .services {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .services .service {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .cards {
+        flex-direction: column;
+        align-items: center;
+    }
 }
 
+/* Smooth scroll */
 html {
-  scroll-behavior: smooth;
+    scroll-behavior: smooth;
 }
-
-.hero {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  height: 90vh;
-  padding: 1rem;
-  background-color: rgba(255, 255, 255, 0.5); /* fondo semitransparente opcional */
-}
-
-.hero h1 {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-  z-index: 2;
-}
-
-.hero p {
-  font-size: 1.2rem;
-  margin-bottom: 2rem;
-  z-index: 2;
-}
-
-@media (max-width: 768px) {
-  .hero h1 {
-    font-size: 1.8rem;
-  }
-
-  .hero p {
-    font-size: 1rem;
-  }
-
-  .hero {
-    padding: 2rem 1rem;
-  }
-
